@@ -270,6 +270,11 @@ section h3::before
 {
     transform: scale(1.05);
 }
+
+.quranPlayerBtn {
+    color: #43a047;
+    text-decoration: none;
+}
 /*** Pray Time ***/
 .pray .cards
 {
@@ -417,6 +422,16 @@ section h3::before
     .lectures-container .right, .lectures-container .left
     {
         width: 98%
+    }
+
+    .main
+    {
+        background: url(./images/grandpa.jpg) center center/cover no-repeat;
+        padding: 0;
+    }
+    .title 
+    {
+        margin-top: 45px;
     }
     .header .bars
     {
