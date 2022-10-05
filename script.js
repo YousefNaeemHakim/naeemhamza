@@ -1,12 +1,13 @@
 //Explore button 
 let exploreBtn = document.querySelector('.title .btn'),
-    HadithSection = document.querySelector('.hadith');
     QuranSection = document.querySelector('.quran');
+    HadithSection = document.querySelector('.hadith');
 exploreBtn.addEventListener('click',()=>{
     QuranSection.scrollIntoView({
         behavior : "smooth"
     })
 })
+
 let fixedNav = document.querySelector('.header'),
      scrollBtn = document.querySelector('.scrollBtn');
 window.addEventListener("scroll",()=>{
@@ -74,7 +75,7 @@ getSurahs()
 function getSurahs()
 {
     //fetch Surahs meta data {Name of SuraHS}
-    fetch("http://api.alquran.cloud/v1/meta")
+    fetch("./meta.json")
     .then(response => response.json())
     .then(data=>{
         let surahs = data.data.surahs.references;
@@ -93,9 +94,11 @@ function getSurahs()
         let SurahsTitels = document.querySelectorAll('.surah');
         let popup = document.querySelector('.surah-popup'),
             AyatContainer = document.querySelector('.ayat');
-        SurahsTitels.forEach((title,index)=>{
-            title.addEventListener('click',()=>{
-                fetch(`http://api.alquran.cloud/v1/surah/${index + 1}`)
+        
+            SurahsTitels.forEach((title,index)=>{
+            title.addEventListener('click',()=>{                
+                let filePath = "https://api.alquran.cloud/v1/surah"; //  ./surahFile.json      fetch(`${filePath}/${index + 1}`)              
+                fetch(`${filePath}/${index + 1}`)
                 .then(response => response.json())
                 .then(data=>{
                     AyatContainer.innerHTML = "";
@@ -116,19 +119,20 @@ function getSurahs()
         })
     })   
 }
+
 //PrayTime Api
+
 let cards = document.querySelector('.cards');
 getPrayTimes();
 function getPrayTimes()
 {
-    fetch("http://api.aladhan.com/v1/timingsByCity?city=cairo&country=egypt&method=8")
+    fetch("./timingsByCity.json")
     .then(response => response.json())
     .then(data =>{
         let times = data.data.timings;
         cards.innerHTML = "";
         for (let time in times)
-        {
-            
+        {            
             cards.innerHTML+= 
             `
                 <div class="card">
@@ -144,6 +148,7 @@ function getPrayTimes()
         }
     })
 }
+
 //Active SideBar
 let bars = document.querySelector('.bars'),
     SideBar = document.querySelector('.header ul');
