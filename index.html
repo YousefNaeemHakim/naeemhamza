@@ -3,20 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/download.jfif" type="logoimg"/>
     <title>صدقة جارية</title>
     
     <link rel="stylesheet" href="./fonts/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body style="user-select: none;">
    <header class="header">
        <div class="container">
            <div class="logo">صدقة جارية</div>
            <ul>
                <li data-filter="main" class="active">الصفحة الرئيسية</li>
-               <li data-filter="hadith">أحاديث</li>
                <li data-filter="quran">الْقُرْآن الْكَرِيْم</li>
+               <li data-filter="hadith">أحاديث</li>
                <li data-filter="pray">مواقيت الصلاة</li>
            </ul>
            <div class="bars">
@@ -43,24 +45,11 @@
        </div>
    </section>
    <!--end Of Main Section -->
-   <!-- Hadith section -->
-   <section class="hadith">
-        <h3>أحاديث</h3>
-        <div class="container">   
-            <div class="hadithContainer">
-              
-            </div>
-            <div class="buttons">
-                <div class="next">التالي</div>
-                <div class="number">1 / 300</div>
-                <div class="prev">السابق</div>
-            </div>
-        </div>
-   </section>
   
     <!-- Quran Section -->
     <section class="quran">
         <h3>الْقُرْآن الْكَرِيْم</h3>
+        <h3>للإستماع<a class="quranPlayerBtn" href="./quranPlayer/index.html" target="blank_"> أضغط هنا</a></h3>
         <div class="container">
             <div class="surhasContainer">
                 
@@ -68,6 +57,21 @@
         </div>
     </section>
     <!-- End of Quran Section -->
+
+     <!-- Hadith section -->
+   <section class="hadith">
+        <h3>أحاديث</h3>
+        <div class="container">   
+            <div class="hadithContainer">
+            
+            </div>
+            <div class="buttons">
+                <div class="next">التالي</div>
+                <div class="number">1 / 300</div>
+                <div class="prev">السابق</div>
+            </div>
+        </div>
+    </section>
     
     <!-- Pray Time Section -->
     <section class="pray">
@@ -79,16 +83,53 @@
                         <svg>
                             <Circle cx="100" cy = "100" r ="100"></Circle>
                         </svg>
-                        <div class="praytime">2:30</div>
+                        <div class="praytime">7:05</div>
                    </div>
-                   <p>Sunset</p>
+                   <p>العشاء</p>
                 </div>
+                <!-- <div class="card">
+                    <div class="circle">
+                         <svg>
+                             <Circle cx="100" cy = "100" r ="100"></Circle>
+                         </svg>
+                         <div class="praytime">5:35</div>
+                    </div>
+                    <p>المغرب</p>
+                 </div>
+                 <div class="card">
+                    <div class="circle">
+                         <svg>
+                             <Circle cx="100" cy = "100" r ="100"></Circle>
+                         </svg>
+                         <div class="praytime">3:05</div>
+                    </div>
+                    <p>العصر</p>
+                 </div>
+                 <div class="card">
+                    <div class="circle">
+                         <svg>
+                             <Circle cx="100" cy = "100" r ="100"></Circle>
+                         </svg>
+                         <div class="praytime">11:45</div>
+                    </div>
+                    <p>الظهر</p>
+                 </div>
+                 <div class="card">
+                    <div class="circle">
+                         <svg>
+                             <Circle cx="100" cy = "100" r ="100"></Circle>
+                         </svg>
+                         <div class="praytime">4:30</div>
+                    </div>
+                    <p>الفجر</p> -->
+                 </div>
             </div>
         </div>
     </section>
     <!-- End OF Pray Time Section -->
 
     <!-- Pop Up -->
+
     <div class="surah-popup ">
         <div class="close-popup">
             <i class="fas fa-times"></i>
@@ -97,11 +138,15 @@
             
         </div>
     </div>
+
     <!-- Scroll Top -->
+
     <div class="scrollBtn">
         <i class="fas fa-angle-double-up"></i>
     </div>
-   <!-- Js File-->
-   <script src="./fonts/all.min.js"></script>
+
+    <script src="./fonts/all.min.js"></script>
+    <script src="./surahFile.json"></script>
    <script src="./script.js"></script>
 </body>
+</html>
